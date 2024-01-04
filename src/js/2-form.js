@@ -8,7 +8,7 @@ form.addEventListener('input', saveFormState);
 
 function onFormSubmit(event) {
   event.preventDefault();
-  if (emailInput.value.trim() && messageInput.value.trim()) {
+  if (emailInput.value && messageInput.value) {
     const formData = {
       email: emailInput.value,
       message: messageInput.value,
@@ -21,8 +21,8 @@ function onFormSubmit(event) {
 
 function saveFormState() {
   const formState = {
-    email: emailInput.value.trim(),
-    message: messageInput.value.trim(),
+    email: emailInput.value,
+    message: messageInput.value,
   };
   localStorage.setItem(formStateKey, JSON.stringify(formState));
 }
